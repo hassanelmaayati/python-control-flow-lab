@@ -108,6 +108,15 @@ check_voting_eligibility()
 
 def calculate_dog_years():
     # Your control flow logic goes here
+    dog_age=input("Enter the dog's age: ")
+    dog_age=int(dog_age)
+    
+    in_dog_years=0
+    
+    if dog_age>2:
+        
+    
+    print("The dog's age in dog years is: "+in_dog_years)
 
 # Call the function
 calculate_dog_years()
