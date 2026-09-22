@@ -17,6 +17,7 @@ def print_greeting():
     if python_is_fun:
         print("Python is fun!")
 
+
 # Call the function
 print_greeting()
 
@@ -38,15 +39,16 @@ print_greeting()
 # - Utilize the `in` operator to check for vowels.
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
+
 def check_letter():
     # Your control flow logic goes here
-    letter= input("Enter a letter: ")
-    print('')
-    if letter.lower() in 'aeiou':
-        print(letter + ' is a vowel')
+    letter = input("Enter a letter: ")
+    print("")
+    if letter.lower() in "aeiou":
+        print(letter + " is a vowel")
     else:
-        print(letter+' is not a vowel')
-    
+        print(letter + " is not a vowel")
+
 
 # Call the function
 check_letter()
@@ -67,22 +69,23 @@ check_letter()
 # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
+
 def check_voting_eligibility():
     # Your control flow logic goes here
-    age=input("enter your age: ")
-    age=int(age)
-    if age<0:
-        print('no negative numbers allowed')
+    age = input("enter your age: ")
+    age = int(age)
+    if age < 0:
+        print("no negative numbers allowed")
     else:
-        if age<18:
-            print('minors are not allowed to vote')
-            
-        elif age>18 and age<99:
-            print('you are allowed to vote')
-            
-        elif age>100:
-            print('sorry what??')
-        
+        if age < 18:
+            print("minors are not allowed to vote")
+
+        elif age > 18 and age < 99:
+            print("you are allowed to vote")
+
+        elif age > 100:
+            print("sorry what??")
+
 
 # Call the function
 check_voting_eligibility()
@@ -106,17 +109,26 @@ check_voting_eligibility()
 # - Convert the string input to an integer using `int()`.
 # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
+
 def calculate_dog_years():
     # Your control flow logic goes here
-    dog_age=input("Enter the dog's age: ")
-    dog_age=int(dog_age)
-    
-    in_dog_years=0
-    
-    if dog_age>2:
-        
-    
-    print("The dog's age in dog years is: "+in_dog_years)
+    dog_age = input("Enter the dog's age: ")
+    dog_age = int(dog_age)
+
+    in_dog_years = 0
+
+    if dog_age == 1:
+        in_dog_years = 10
+        print("the dog's age in dog years is: ", in_dog_years)
+
+    elif dog_age == 2:
+        in_dog_years = 20
+        print("the dog's age in dog years is: ", in_dog_years)
+
+    elif dog_age > 2:
+        in_dog_years = 20 + ((dog_age - 2) * 7)
+        print("the dog's age in dog years is: ", in_dog_years)
+
 
 # Call the function
 calculate_dog_years()
