@@ -196,9 +196,46 @@ weather_advice()
 # - Use 'in' to check if a string is in a list or tuple.
 # - Adjust the season based on the day of the month when needed.
 # - Ensure to validate input formats and handle unexpected inputs gracefully.
-
 def determine_season():
-    # Your control flow logic goes here
+    the_month = input("Enter the month of the year (Jan - Dec): ").capitalize()
+
+    try:
+        the_day = int(input("Enter the day of the month: "))
+    except ValueError:
+        print("Invalid day. Please enter a number.")
+        return
+
+    valid_months = ("Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov","Dec")
+
+    if the_month not in valid_months:
+        print("Invalid month. Please enter a three-letter month (Jan - Dec).")
+        return
+
+    if the_day < 1 or the_day > 31:
+        print("Invalid day. Please enter a day between 1 and 31.")
+        return
+
+    if the_month == "Dec":
+        season = "Winter" if the_day >= 21 else "Fall"
+    elif the_month == "Mar":
+        season = "Spring" if the_day >= 20 else "Winter"
+    elif the_month == "Jun":
+        season = "Summer" if the_day >= 21 else "Spring"
+    elif the_month == "Sep":
+        season = "Fall" if the_day >= 22 else "Summer"
+        
+    # Remaining months belong entirely to one season
+    elif the_month in ("Jan", "Feb"):
+        season = "Winter"
+    elif the_month in ("Apr", "May"):
+        season = "Spring"
+    elif the_month in ("Jul", "Aug"):
+        season = "Summer"
+    else:  # Oct, Nov
+        season = "Fall"
+
+    print(f"{the_month} {the_day:02d} is in {season}.")
+
 
 # Call the function
 determine_season()
